@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Accessible enterprise dashboard starter project">
+  <title>Overview | AccessBoard</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="AccessBoard home">AccessBoard</a>
+    <button class="menu-toggle" type="button" aria-controls="primary-nav" aria-expanded="false">Menu</button>
+    <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
+      <a href="index.html" aria-current="page">Overview</a><a href="users.html">Users</a><a href="reports.html">Reports</a><a href="settings.html">Settings</a>
+    </nav>
+    <span class="user-label">Signed in: Admin</span>
+  </header>
+  <div class="layout">
+    <aside class="sidebar" aria-label="Dashboard sidebar">
+      <h2>Workspace</h2>
+      <nav aria-label="Workspace navigation">
+        <a href="index.html" aria-current="page">Dashboard overview</a>
+        <a href="users.html">User management</a>
+        <a href="reports.html">Reports</a>
+        <a href="settings.html">Preferences</a>
+      </nav>
+      <p class="sidebar-note">Accessible dashboard starter</p>
+    </aside>
+    <main id="main-content" tabindex="-1">
+      <section class="page-heading" aria-labelledby="page-title">
+        <p class="eyebrow">Workspace / Overview</p><h1 id="page-title">Dashboard overview</h1>
+        <p>Monitor key activity and manage your workspace.</p>
+      </section>
+      <section class="metrics" aria-label="Key performance indicators">
+        <article class="metric-card"><h2>Active users</h2><p class="metric">1,284</p><p class="positive">+8.2% this month</p></article>
+        <article class="metric-card"><h2>Open tasks</h2><p class="metric">36</p><p>Across 4 teams</p></article>
+        <article class="metric-card"><h2>Completion rate</h2><p class="metric">92%</p><p class="positive">+2.4% this month</p></article>
+      </section>
+      <section class="panel" aria-labelledby="activity-title">
+        <div class="panel-heading"><div><h2 id="activity-title">Recent activity</h2><p>Latest workspace updates</p></div>
+          <button class="button" type="button" id="open-modal">View details</button></div>
+        <div class="table-wrap">
+          <table>
+            <caption>Recent workspace activity</caption>
+            <thead><tr><th scope="col">Activity</th><th scope="col">Owner</th><th scope="col">Date</th><th scope="col">Status</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Quarterly report</th><td>Priya S.</td><td><time datetime="2026-11-05">05 Nov 2026</time></td><td><span class="status complete">Completed</span></td></tr>
+              <tr><th scope="row">Update user roles</th><td>Arun K.</td><td><time datetime="2026-11-06">06 Nov 2026</time></td><td><span class="status pending">In progress</span></td></tr>
+              <tr><th scope="row">Accessibility review</th><td>Meena R.</td><td><time datetime="2026-11-07">07 Nov 2026</time></td><td><span class="status planned">Planned</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="panel" aria-labelledby="quick-form-title">
+        <h2 id="quick-form-title">Create a workspace task</h2>
+        <form id="task-form">
+          <div class="form-grid">
+            <div class="field"><label for="task-name">Task name <span aria-hidden="true">*</span></label><input id="task-name" name="taskName" type="text" required minlength="3" maxlength="80" autocomplete="off" aria-describedby="task-help"><small id="task-help">Enter between 3 and 80 characters.</small></div>
+            <div class="field"><label for="task-date">Due date <span aria-hidden="true">*</span></label><input id="task-date" name="dueDate" type="date" required></div>
+          </div>
+          <fieldset><legend>Priority <span aria-hidden="true">*</span></legend>
+            <label class="choice"><input type="radio" name="priority" value="Low" required> Low</label>
+            <label class="choice"><input type="radio" name="priority" value="Medium"> Medium</label>
+            <label class="choice"><input type="radio" name="priority" value="High"> High</label>
+          </fieldset>
+          <div class="field"><label for="task-notes">Notes (optional)</label><textarea id="task-notes" name="notes" rows="3" maxlength="300"></textarea></div>
+          <button class="button primary" type="submit">Create task</button>
+          <p id="form-message" class="form-message" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+  </div>
+  <footer class="footer"><p>&copy; 2026 AccessBoard. Built with semantic HTML5 and accessibility in mind.</p></footer>
+  <dialog id="details-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-content"><h2 id="dialog-title">Activity details</h2><p>This dialog demonstrates a native accessible modal.</p><p>Press Escape or use the close button to dismiss it.</p><button class="button primary" id="close-modal" type="button">Close</button></div>
+  </dialog>
+</body>
+</html>
